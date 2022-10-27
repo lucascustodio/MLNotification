@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+    web:
+        build: .
+       
+        depends_on:
+            - db
+    db:
+        image: "mcr.microsoft.com/mssql/server:2019-latest"
+        environment:
+            SA_PASSWORD: "mudar123@mudar123"
+            ACCEPT_EULA: "Y"
+        ports:
+            - "1401:1433"
